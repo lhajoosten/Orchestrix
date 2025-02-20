@@ -1,0 +1,57 @@
+version: "3.8"
+
+services:
+  orchestrix-admin-api:
+    build:
+      context: .
+      dockerfile: api/Orchestrix.Admin.Api/Orchestrix.Admin.Api/Dockerfile
+    ports:
+      - "5100:5000"
+      - "5200:5443"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
+      - ASPNETCORE_URLS=${ADMIN_ASPNETCORE_URLS}
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=${ASPNETCORE_KESTREL_CERTIFICATE_PASSWORD}
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=${CERTIFICATE_PATH}
+    volumes:
+      - ${USERPROFILE}\.aspnet\https:/https/:ro
+    networks:
+      - orchestrix-network
+
+  orchestrix-identity-api:
+    build:
+      context: .
+      dockerfile: api/Orchestrix.Identity.Api/Orchestrix.Identity.Api/Dockerfile
+    ports:
+      - "5300:6000"
+      - "5400:6443"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
+      - ASPNETCORE_URLS=${IDENTITY_ASPNETCORE_URLS}
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=${ASPNETCORE_KESTREL_CERTIFICATE_PASSWORD}
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=${CERTIFICATE_PATH}
+    volumes:
+      - ${USERPROFILE}\.aspnet\https:/https/:ro
+    networks:
+      - orchestrix-network
+
+  orchestrix-public-api:
+    build:
+      context: .
+      dockerfile: api/Orchestrix.Public.Api/Orchestrix.Public.Api/Dockerfile
+    ports:
+      - "5500:7000"
+      - "5600:7443"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
+      - ASPNETCORE_URLS=${PUBLIC_ASPNETCORE_URLS}
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=${ASPNETCORE_KESTREL_CERTIFICATE_PASSWORD}
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=${CERTIFICATE_PATH}
+    volumes:
+      - ${USERPROFILE}\.aspnet\https:/https/:ro
+    networks:
+      - orchestrix-network
+
+networks:
+  orchestrix-network:
+    driver: bridge

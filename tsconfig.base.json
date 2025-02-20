@@ -14,7 +14,15 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@orchestrix/orchestix-auth": ["libs/orchestix-auth/src/index.ts"],
+      "@orchestrix/orchestix-core": ["libs/orchestix-core/src/index.ts"],
+      "@orchestrix/orchestix-data-access": [
+        "libs/orchestix-data-access/src/index.ts"
+      ],
+      "@orchestrix/orchestix-state": ["libs/orchestix-state/src/index.ts"],
+      "@orchestrix/orchestix-ui": ["libs/orchestix-ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

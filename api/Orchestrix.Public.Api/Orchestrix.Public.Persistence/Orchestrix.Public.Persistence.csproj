@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\shared\Orchestrix.Core\Orchestrix.Core.csproj" />
+    <ProjectReference Include="..\Orchestrix.Public.Application\Orchestrix.Public.Application.csproj" />
+    <ProjectReference Include="..\Orchestrix.Public.Domain\Orchestrix.Public.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

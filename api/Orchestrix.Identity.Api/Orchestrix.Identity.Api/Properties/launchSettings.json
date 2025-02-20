@@ -1,0 +1,37 @@
+{
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_Kestrel__Certificates__Default__Path": "C:/Users/lhajo/.aspnet/https/dev-cert.pfx",
+        "ASPNETCORE_Kestrel__Certificates__Default__Password": "YourSecurePassword123!"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:6000"
+    },
+    "https": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "https://localhost:6443/api/v1/swagger/index.html",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_Kestrel__Certificates__Default__Path": "C:/Users/lhajo/.aspnet/https/dev-cert.pfx",
+        "ASPNETCORE_Kestrel__Certificates__Default__Password": "YourSecurePassword123!"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:6443;http://localhost:6000"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api/v1/swagger/index.html",
+      "environmentVariables": {
+        "ASPNETCORE_HTTPS_PORTS": "6443",
+        "ASPNETCORE_HTTP_PORTS": "6000"
+      },
+      "publishAllPorts": true,
+      "useSSL": true
+    }
+  },
+  "$schema": "https://json.schemastore.org/launchsettings.json"
+}

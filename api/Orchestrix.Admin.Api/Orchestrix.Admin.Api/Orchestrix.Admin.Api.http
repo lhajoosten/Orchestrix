@@ -1,0 +1,6 @@
+@Orchestrix.Admin.Api_HostAddress = http://localhost:5121
+
+GET {{Orchestrix.Admin.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

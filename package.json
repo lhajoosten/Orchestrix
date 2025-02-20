@@ -2,7 +2,11 @@
   "name": "@orchestrix/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start:admin-portal":"npx nx serve orchestrix-admin",
+    "start:public-portal":"npx nx serve orchestrix-public",
+    "start": "npm run start:admin-portal && npm run start:public-portal"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~19.1.0",
