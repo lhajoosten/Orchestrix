@@ -1,3 +1,2 @@
-@use '../../../common/styles';
-
-// Your app-specific styles here
+@use './styles/variables' as variables;
+@use './styles/styles' as *;

@@ -1,1 +1,20 @@
-<p>sidenav works!</p>
+<nav class="sidenav">
+  <ul class="menu-list">
+    <li *ngFor="let item of menuItems" class="menu-item">
+      <a *ngIf="item.route" [routerLink]="item.route" routerLinkActive="active">
+        <i *ngIf="item.icon" [class]="item.icon"></i>
+        <span>{{ item.label }}</span>
+      </a>
+      <div *ngIf="item.children" class="submenu">
+        <ul>
+          <li *ngFor="let child of item.children">
+            <a [routerLink]="child.route" routerLinkActive="active">
+              <i *ngIf="child.icon" [class]="child.icon"></i>
+              <span>{{ child.label }}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</nav>

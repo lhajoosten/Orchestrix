@@ -17,17 +17,13 @@
         "tsConfig": "apps/orchestrix-admin/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          {
-            "glob": "**/*",
-            "input": "apps/orchestrix-admin/public"
-          }
+          "apps/orchestrix-admin/src/favicon.ico",
+          "apps/orchestrix-admin/src/assets"
         ],
+        "styles": ["apps/orchestrix-admin/src/styles.scss"],
         "stylePreprocessorOptions": {
-          "includePaths": ["../../common"]
+          "includePaths": ["apps/orchestrix-admin/src"]
         },
-        "styles": [
-          "apps/orchestrix-admin/src/styles.scss"
-        ],
         "scripts": []
       },
       "configurations": {

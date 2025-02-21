@@ -1,57 +1,48 @@
-<lib-orchestrix-ui-layout
-  [headerTemplate]="publicHeader"
-  [sidenavTemplate]="publicSidenav"
-  [footerTemplate]="publicFooter">
-  <!-- Public-specifieke content -->
-  <div class="public-dashboard">
-    <h2>Welkom bij Orchestrix Public Portal</h2>
-    <section class="public-info">
-      <div class="widget">
-        <h3>Laatste Taken</h3>
-        <ul>
-          <li *ngFor="let task of latestTasks">{{ task.title }}</li>
-        </ul>
-      </div>
-      <div class="widget">
-        <h3>Projecten in de Spotlight</h3>
-        <ul>
-          <li *ngFor="let project of spotlightProjects">{{ project.name }}</li>
-        </ul>
-      </div>
-    </section>
-  </div>
+<lib-orchestrix-ui-layout>
+  <ng-template #headerTemplate>
+    <lib-orchestrix-ui-header
+      logo="assets/public-logo.png"
+      title="Orchestrix"
+      [actions]="publicHeaderActions">
+    </lib-orchestrix-ui-header>
+  </ng-template>
+
+  <ng-template #sidenavTemplate>
+    <lib-orchestrix-ui-sidenav
+      [menuItems]="publicMenuItems">
+    </lib-orchestrix-ui-sidenav>
+  </ng-template>
+
+  <ng-template #footerTemplate>
+    <lib-orchestrix-ui-footer
+      [footerText]="'© 2025 Orchestrix'"
+      [links]="footerLinks">
+    </lib-orchestrix-ui-footer>
+  </ng-template>
+
+  <!-- Main content -->
+  <main class="public-dashboard">
+    <div class="dashboard-content">
+      <section class="latest-tasks">
+        <h2>Latest Tasks</h2>
+        <div class="task-list">
+          <div *ngFor="let task of latestTasks" class="task-item">
+            <h3>{{ task.title }}</h3>
+          </div>
+        </div>
+      </section>
+
+      <section class="spotlight-projects">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+          <div *ngFor="let project of spotlightProjects" class="project-card">
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.description }}</p>
+          </div>
+        </div>
+      </section>
+
+      <router-outlet></router-outlet>
+    </div>
+  </main>
 </lib-orchestrix-ui-layout>
-
-<!-- Public Header Template -->
-<ng-template #publicHeader>
-  <header class="public-header">
-    <div class="public-logo">
-      <img src="assets/public-logo.png" alt="Public Logo">
-      <span>Orchestrix</span>
-    </div>
-    <div class="public-nav-actions">
-      <a routerLink="/login">Login</a>
-      <a routerLink="/register">Registreren</a>
-    </div>
-  </header>
-</ng-template>
-
-<!-- Public Sidenav Template -->
-<ng-template #publicSidenav>
-  <nav class="public-sidenav">
-    <ul>
-      <li><a routerLink="/tasks">Taken</a></li>
-      <li><a routerLink="/projects">Projecten</a></li>
-      <li><a routerLink="/boards">Boards</a></li>
-      <!-- Extra publieke links -->
-      <li><a routerLink="/about">Over ons</a></li>
-    </ul>
-  </nav>
-</ng-template>
-
-<!-- Public Footer Template -->
-<ng-template #publicFooter>
-  <footer class="public-footer">
-    <p>© 2025 Orchestrix. Alle rechten voorbehouden.</p>
-  </footer>
-</ng-template>

@@ -4,19 +4,14 @@
   "sourceRoot": "libs/orchestrix-ui/src",
   "prefix": "lib",
   "projectType": "library",
-  "tags": [],
   "targets": {
-    "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/orchestrix-ui/jest.config.ts",
-        "stylePreprocessorOptions": {
-          "includePaths": ["../../common"]        }
+        "project": "libs/orchestrix-ui/ng-package.json",
+        "tsConfig": "libs/orchestrix-ui/tsconfig.lib.json"
       }
-    },
-    "lint": {
-      "executor": "@nx/eslint:lint"
     }
   }
 }

@@ -1,10 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
+export interface MenuItem {
+  label: string;
+  route?: string;
+  icon?: string;
+  children?: MenuItem[];
+}
 
 @Component({
   selector: 'lib-orchestrix-ui-sidenav',
-  imports: [CommonModule],
+  standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './sidenav.component.html',
-  styleUrl: './sidenav.component.scss',
+  styleUrls: ['./sidenav.component.scss']
 })
-export class SidenavComponent {}
+export class SidenavComponent {
+  @Input() menuItems: MenuItem[] = [];
+}

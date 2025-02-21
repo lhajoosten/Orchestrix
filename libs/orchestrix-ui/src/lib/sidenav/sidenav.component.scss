@@ -1,0 +1,61 @@
+@use '../../styles/variables' as variables;
+@use '../../styles/styles' as *;
+
+.sidenav {
+  width: 250px;
+  background-color: var(--background-color);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  height: 100%;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
+
+  .menu-list {
+    list-style: none;
+    padding: 1rem 0;
+    margin: 0;
+
+    .menu-item {
+      a {
+        display: flex;
+        align-items: center;
+        padding: 0.75rem 1.5rem;
+        color: var(--text-color);
+        text-decoration: none;
+        transition: all 0.2s ease;
+        gap: 0.75rem;
+
+        i {
+          width: 20px;
+          font-size: 1.1rem;
+          color: var(--primary-color);
+        }
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        &.active {
+          background-color: var(--primary-color);
+          color: var(--background-color);
+
+          i {
+            color: var(--background-color);
+          }
+        }
+      }
+
+      .submenu {
+        background-color: rgba(0, 0, 0, 0.02);
+
+        ul {
+          list-style: none;
+          padding: 0;
+
+          li a {
+            padding-left: 3.25rem;
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}

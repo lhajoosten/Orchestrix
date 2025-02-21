@@ -1,10 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
+export interface HeaderAction {
+  label: string;
+  route?: string;
+  onClick?: () => void;
+  icon?: string;
+}
 
 @Component({
   selector: 'lib-orchestrix-ui-header',
-  imports: [CommonModule],
+  standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
+  styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  @Input() logo?: string;
+  @Input() title?: string;
+  @Input() actions: HeaderAction[] = [];
+}

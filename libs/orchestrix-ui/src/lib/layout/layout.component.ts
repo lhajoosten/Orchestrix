@@ -1,17 +1,18 @@
-import { Component, Input, TemplateRef } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ContentChild, TemplateRef } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { SidenavComponent } from '../sidenav/sidenav.component';
 import { FooterComponent } from '../footer/footer.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'lib-orchestrix-ui-layout',
   templateUrl: './layout.component.html',
-  styleUrl: './layout.component.scss',
-  imports: [HeaderComponent, SidenavComponent, FooterComponent,CommonModule],
+  styleUrls: ['./layout.component.scss'],
+  imports: [HeaderComponent, SidenavComponent, FooterComponent, CommonModule],
+  standalone: true
 })
 export class LayoutComponent {
-  @Input() headerTemplate?: TemplateRef<any>;
-  @Input() sidenavTemplate?: TemplateRef<any>;
-  @Input() footerTemplate?: TemplateRef<any>;
+  @ContentChild('headerTemplate') headerTemplate?: TemplateRef<any>;
+  @ContentChild('sidenavTemplate') sidenavTemplate?: TemplateRef<any>;
+  @ContentChild('footerTemplate') footerTemplate?: TemplateRef<any>;
 }

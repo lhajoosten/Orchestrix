@@ -1,45 +1,59 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { LayoutComponent } from '@orchestrix-ui';
+import { CommonModule } from '@angular/common';
+import { FooterComponent, HeaderComponent, LayoutComponent, SidenavComponent } from '@orchestrix-ui';
+import { HeaderAction, MenuItem, FooterLink } from '@orchestrix-ui';
 
 @Component({
   selector: 'app-orchestrix-admin-root',
   templateUrl: './admin-dashboard.component.html',
   styleUrls: ['./admin-dashboard.component.scss'],
   standalone: true,
-  imports: [LayoutComponent, RouterModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    LayoutComponent,
+    HeaderComponent,
+    SidenavComponent,
+    FooterComponent
+  ],
 })
+export class AdminDashboardComponent {
+  adminHeaderActions: HeaderAction[] = [
+    { label: 'Dashboard', route: '/admin/dashboard', icon: 'fa-home' },
+    { label: 'Users', route: '/admin/users', icon: 'fa-users' },
+    { label: 'Settings', onClick: () => this.openSettings(), icon: 'fa-cog' },
+    { label: 'Logout', onClick: () => this.logout(), icon: 'fa-sign-out' }
+  ];
 
-export class AdminDashboardComponent implements OnInit {
-  activeUsers = 0;
-  systemStatus = 'Onbekend';
+  adminMenuItems: MenuItem[] = [
+    { label: 'Overview', route: '/admin/dashboard', icon: 'fa-chart-bar' },
+    {
+      label: 'User Management',
+      icon: 'fa-users-cog',
+      children: [
+        { label: 'Users', route: '/admin/users', icon: 'fa-user' },
+        { label: 'Roles', route: '/admin/roles', icon: 'fa-user-shield' }
+      ]
+    },
+    { label: 'Projects', route: '/admin/projects', icon: 'fa-project-diagram' },
+    { label: 'Settings', route: '/admin/settings', icon: 'fa-cog' }
+  ];
 
-  constructor(private router: Router /*, private authService: AuthService */) {}
+  footerLinks: FooterLink[] = [
+    { label: 'Admin Guide', url: '/admin/guide' },
+    { label: 'Support', url: '/admin/support' },
+    { label: 'Privacy Policy', url: '/privacy' }
+  ];
 
-  ngOnInit(): void {
-    // Initialiseer dashboardgegevens, bv. door een service aan te roepen
-    this.loadDashboardData();
-  }
+  constructor(private router: Router) {}
 
-  loadDashboardData(): void {
-    // Hier zou je data ophalen via een service. Voor nu wat dummy data:
-    this.activeUsers = 125;
-    this.systemStatus = 'Online';
-  }
-
-  openUserProfile(): void {
-    // Logica om het gebruikersprofiel te openen
-    console.log('Open user profile');
-    // Bijvoorbeeld: navigeer naar het profieloverzicht
-    this.router.navigate(['/admin/profile']);
+  openSettings(): void {
+    this.router.navigate(['/admin/settings']);
   }
 
   logout(): void {
-    // Logica om uit te loggen
-    console.log('User logged out');
-    // Als je een AuthService gebruikt, roep dan de logout methode aan
-    // this.authService.logout();
-    // Navigeer naar de loginpagina
+    // Implement logout logic
     this.router.navigate(['/login']);
   }
 }

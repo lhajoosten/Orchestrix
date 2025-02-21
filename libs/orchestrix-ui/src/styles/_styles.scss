@@ -1,0 +1,25 @@
+@use 'variables' as variables;
+
+:root {
+  --primary-color: #{variables.$light-primary};
+  --secondary-color: #{variables.$light-secondary};
+  --alternative-color: #{variables.$light-alternative};
+  --background-color: #{variables.$light-background};
+  --text-color: #{variables.$light-text};
+  --accent-color: #{variables.$light-accent};
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: variables.$font-family;
+}
+
+body.dark-mode {
+  --primary-color: #{variables.$dark-primary};
+  --secondary-color: #{variables.$dark-secondary};
+  --alternative-color: #{variables.$dark-alternative};
+  --background-color: #{variables.$dark-background};
+  --text-color: #{variables.$dark-text};
+  --accent-color: #{variables.$dark-accent};
+}

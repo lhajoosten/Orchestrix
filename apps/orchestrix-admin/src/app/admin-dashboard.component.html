@@ -1,55 +1,29 @@
-<lib-orchestrix-ui-layout
-  [headerTemplate]="adminHeader"
-  [sidenavTemplate]="adminSidenav"
-  [footerTemplate]="adminFooter">
-  <!-- Admin-specifieke content -->
+<lib-orchestrix-ui-layout>
+  <ng-template #headerTemplate>
+    <lib-orchestrix-ui-header
+      logo="assets/admin-logo.png"
+      title="Admin Portal"
+      [actions]="adminHeaderActions">
+    </lib-orchestrix-ui-header>
+  </ng-template>
+
+  <ng-template #sidenavTemplate>
+    <lib-orchestrix-ui-sidenav
+      [menuItems]="adminMenuItems">
+    </lib-orchestrix-ui-sidenav>
+  </ng-template>
+
+  <ng-template #footerTemplate>
+    <lib-orchestrix-ui-footer
+      [footerText]="'© 2025 Orchestrix Admin Portal'"
+      [links]="footerLinks">
+    </lib-orchestrix-ui-footer>
+  </ng-template>
+
+  <!-- Main content -->
   <div class="admin-dashboard">
-    <h2>Admin Dashboard Overview</h2>
-    <!-- Hier kun je widgets, grafieken of extra componenten toevoegen -->
-    <section class="dashboard-widgets">
-      <!-- Bijvoorbeeld een overzicht van statistieken -->
-      <div class="widget">
-        <h3>Actieve Gebruikers</h3>
-        <p>{{ activeUsers }}</p>
-      </div>
-      <div class="widget">
-        <h3>Systeemstatus</h3>
-        <p>{{ systemStatus }}</p>
-      </div>
-    </section>
+    <div class="dashboard-content">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </lib-orchestrix-ui-layout>
-
-<!-- Admin Header Template -->
-<ng-template #adminHeader>
-  <header class="admin-header">
-    <div class="admin-logo">
-      <img src="assets/admin-logo.png" alt="Admin Logo">
-      <span>Admin Portal</span>
-    </div>
-    <div class="admin-user-actions">
-      <button (click)="openUserProfile()">Profiel</button>
-      <button (click)="logout()">Uitloggen</button>
-    </div>
-  </header>
-</ng-template>
-
-<!-- Admin Sidenav Template -->
-<ng-template #adminSidenav>
-  <nav class="admin-sidenav">
-    <ul>
-      <li><a routerLink="/admin/users">Gebruikersbeheer</a></li>
-      <li><a routerLink="/admin/settings">Instellingen</a></li>
-      <li><a routerLink="/admin/reports">Rapporten</a></li>
-      <!-- Eventueel extra admin-links -->
-      <li><a routerLink="/admin/logs">Systeemlogs</a></li>
-    </ul>
-  </nav>
-</ng-template>
-
-<!-- Admin Footer Template -->
-<ng-template #adminFooter>
-  <footer class="admin-footer">
-    <p>© 2025 Orchestrix Admin Portal. Alle rechten voorbehouden.</p>
-  </footer>
-</ng-template>

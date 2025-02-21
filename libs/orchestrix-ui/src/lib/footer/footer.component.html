@@ -1,1 +1,15 @@
-<p>footer works!</p>
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-links">
+      <a *ngFor="let link of links"
+         [href]="link.url"
+         target="_blank"
+         rel="noopener noreferrer">
+        {{ link.label }}
+      </a>
+    </div>
+    <div class="footer-text">
+      {{ footerText }}
+    </div>
+  </div>
+</footer>

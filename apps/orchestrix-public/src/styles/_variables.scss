@@ -1,0 +1,48 @@
+@use 'sass:color';
+@use 'sass:map';
+
+// Function to mix colors
+@function lighten($color, $amount) {
+  @return color.mix(white, $color, $amount);
+}
+
+// Colors
+$red-velvet: #902C3E;
+$gold: #EFBF04;
+$purple-blue: #967bb6;
+$complementary-blue: #4A90E2; // Complementary blue for balance
+
+// Light Theme Colors
+$light-primary: $red-velvet;
+$light-secondary: $gold;
+$light-alternative: $purple-blue;
+$light-background: #f8f8f8;
+$light-text: #000000;
+$light-accent: $complementary-blue;
+
+// Dark Theme Colors
+$dark-primary: lighten($red-velvet, 20%);
+$dark-secondary: lighten($gold, 20%);
+$dark-alternative: lighten($purple-blue, 20%);
+$dark-background: #212121;
+$dark-text: #616161;
+$dark-accent: lighten($complementary-blue, 20%);
+
+// Neutral colors
+$neutral-white: #ffffff;
+$neutral-gray-100: #f9f9f9; // Background color (your original background color)
+$neutral-gray-200: #e0e0e0;
+$neutral-gray-300: #bdbdbd;
+$neutral-gray-400: #9e9e9e;
+$neutral-gray-500: #616161; // Text color (dark mode)
+$neutral-gray-600: #424242;
+$neutral-gray-700: #212121;
+$neutral-black: #000000; // Text color (light mode)
+
+// Success, Warning, Error colors
+$success-color: #19ca28;
+$warning-color: #ff9900;
+$error-color: #ca0c0c;
+
+// Font
+$font-family: 'Roboto', sans-serif;

@@ -1,1 +1,18 @@
-<p>header works!</p>
+<header class="header">
+  <div class="logo">
+    <img *ngIf="logo" [src]="logo" [alt]="title">
+    <span>{{ title }}</span>
+  </div>
+  <nav class="nav-actions">
+    <ng-container *ngFor="let action of actions">
+      <a *ngIf="action.route" [routerLink]="action.route" class="nav-item">
+        <i *ngIf="action.icon" [class]="action.icon"></i>
+        {{ action.label }}
+      </a>
+      <button *ngIf="action.onClick" (click)="action.onClick()" class="nav-item">
+        <i *ngIf="action.icon" [class]="action.icon"></i>
+        {{ action.label }}
+      </button>
+    </ng-container>
+  </nav>
+</header>
