@@ -15,13 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@orchestrix/orchestrix-auth": ["libs/orchestrix-auth/src/index.ts"],
-      "@orchestrix/orchestrix-core": ["libs/orchestrix-core/src/index.ts"],
-      "@orchestrix/orchestrix-data-access": [
-        "libs/orchestrix-data-access/src/index.ts"
-      ],
-      "@orchestrix/orchestrix-state": ["libs/orchestrix-state/src/index.ts"],
-      "@orchestrix/orchestrix-ui": ["libs/orchestrix-ui/src/index.ts"]
+      "@orchestrix-auth": ["libs/orchestrix-auth/src/index.ts"],
+      "@orchestrix-core": ["libs/orchestrix-core/src/index.ts"],
+      "@orchestrix-data-access": ["libs/orchestrix-data-access/src/index.ts"],
+      "@orchestrix-state": ["libs/orchestrix-state/src/index.ts"],
+      "@orchestrix-ui": ["libs/orchestrix-ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,0 +1,23 @@
+<div class="layout">
+  <header class="layout-header">
+    <!-- Here you could optionally embed your header component -->
+    <lib-orchestrix-ui-header></lib-orchestrix-ui-header>
+  </header>
+
+  <div class="layout-body">
+    <aside class="layout-sidenav">
+      <!-- Here you could optionally embed your sidenav component -->
+      <lib-orchestrix-ui-sidenav></lib-orchestrix-ui-sidenav>
+    </aside>
+
+    <main class="layout-content">
+      <!-- Content from the host app will be projected here -->
+      <ng-content></ng-content>
+    </main>
+  </div>
+
+  <footer class="layout-footer">
+    <!-- Optionally, add your footer component here -->
+    <lib-orchestrix-ui-footer></lib-orchestrix-ui-footer>
+  </footer>
+</div>

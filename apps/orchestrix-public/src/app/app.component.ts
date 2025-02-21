@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { LayoutComponent } from '@orchestrix-ui';
 
 @Component({
-  imports: [NxWelcomeComponent, RouterModule],
-  selector: 'app-root',
+  selector: 'app-orchestrix-public-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  styleUrls: ['./app.component.scss'],
+  standalone: true,
+  imports: [LayoutComponent, RouterModule],
 })
+
 export class AppComponent {
   title = 'orchestrix-public';
 }

@@ -52,7 +52,7 @@
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
       "options": {
-        "port": 25000,
+        "port": 26000,
         "ssl": true,
         "sslKey": "../../ssl/localhost.key",
         "sslCert": "../../ssl/localhost.crt"
@@ -60,7 +60,7 @@
       "configurations": {
         "production": {
           "buildTarget": "orchestrix-admin:build:production",
-          "port": 25443
+          "port": 26443
         },
         "development": {
           "buildTarget": "orchestrix-admin:build:development"
