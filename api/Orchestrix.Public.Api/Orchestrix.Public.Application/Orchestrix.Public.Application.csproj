@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\shared\Orchestrix.Core\Orchestrix.Core.csproj" />
+    <ProjectReference Include="..\..\shared\Orchestrix.Core\Orchestrix.Core.csproj" />
     <ProjectReference Include="..\Orchestrix.Public.Domain\Orchestrix.Public.Domain.csproj" />
   </ItemGroup>
 

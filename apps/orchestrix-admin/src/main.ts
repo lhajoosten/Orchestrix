@@ -1,7 +1,7 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
+import { AdminDashboardComponent } from './app/admin-dashboard.component';
 
-bootstrapApplication(AppComponent, appConfig).catch((err) =>
+bootstrapApplication(AdminDashboardComponent, appConfig).catch((err) =>
   console.error(err)
 );

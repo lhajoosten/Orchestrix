@@ -1,5 +1,3 @@
-export * from './lib/dashboard/dashboard.component';
-
 export * from './lib/header/header.component';
 
 export * from './lib/sidenav/sidenav.component';

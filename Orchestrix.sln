@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{346A116A-D5B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{C41C0522-E56A-4C8E-AA68-13800ACCB243}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orchestrix.Infrastructure.Mailing", "shared\Orchestrix.Infrastructure\Orchestrix.Infrastructure.Mailing\Orchestrix.Infrastructure.Mailing.csproj", "{E8F100DF-9125-4A1F-AD8E-6088B0CA748B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orchestrix.Infrastructure.Mailing", "api\shared\Orchestrix.Infrastructure\Orchestrix.Infrastructure.Mailing\Orchestrix.Infrastructure.Mailing.csproj", "{E8F100DF-9125-4A1F-AD8E-6088B0CA748B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AdminPortal", "AdminPortal", "{E3881C76-760B-4EF1-8670-8B79C229AEA4}"
 EndProject
@@ -39,7 +39,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orchestrix.Public.Domain", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orchestrix.Public.Persistence", "api\Orchestrix.Public.Api\Orchestrix.Public.Persistence\Orchestrix.Public.Persistence.csproj", "{7D597E3B-39DE-4D89-A57D-FAF04BC7A331}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orchestrix.Core", "shared\Orchestrix.Core\Orchestrix.Core.csproj", "{CB5EBD96-DA99-47D0-9189-EC6497F22D05}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orchestrix.Core", "api\shared\Orchestrix.Core\Orchestrix.Core.csproj", "{CB5EBD96-DA99-47D0-9189-EC6497F22D05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

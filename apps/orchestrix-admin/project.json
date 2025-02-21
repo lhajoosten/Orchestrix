@@ -22,7 +22,12 @@
             "input": "apps/orchestrix-admin/public"
           }
         ],
-        "styles": ["apps/orchestrix-admin/src/styles.scss"],
+        "stylePreprocessorOptions": {
+          "includePaths": ["../../common"]
+        },
+        "styles": [
+          "apps/orchestrix-admin/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {

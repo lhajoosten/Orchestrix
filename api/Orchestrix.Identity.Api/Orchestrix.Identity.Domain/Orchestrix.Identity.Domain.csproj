@@ -6,4 +6,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\shared\Orchestrix.Core\Orchestrix.Core.csproj" />
+  </ItemGroup>
 </Project>

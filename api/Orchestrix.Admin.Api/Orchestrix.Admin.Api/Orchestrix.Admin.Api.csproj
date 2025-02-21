@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\shared\Orchestrix.Core\Orchestrix.Core.csproj" />
+    <ProjectReference Include="..\..\shared\Orchestrix.Core\Orchestrix.Core.csproj" />
     <ProjectReference Include="..\Orchestrix.Admin.Application\Orchestrix.Admin.Application.csproj" />
     <ProjectReference Include="..\Orchestrix.Admin.Persistence\Orchestrix.Admin.Persistence.csproj" />
   </ItemGroup>
